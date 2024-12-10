@@ -4,9 +4,15 @@ from pydantic import BaseModel
 import wikipedia
 from rouge_score import rouge_scorer
 from nltk.translate.bleu_score import sentence_bleu
+import os
+
+API_KEY = os.getenv("GOOGLE_API_KEY")
+
+if not API_KEY:
+    raise RuntimeError("GOOGLE_API_KEY environment variable is not set")
 
 # Configure the Gemini API key
-genai.configure(api_key="AIzaSyAiSeon2RzZZrJPy2EM2yNGALy61siYBO4")
+genai.configure(api_key=API_KEY)
 
 # Create FastAPI app instance
 app = FastAPI()
