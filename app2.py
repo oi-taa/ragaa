@@ -3,7 +3,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 # Configure the Gemini API key
-genai.configure(api_key="AIzaSyAiSeon2RzZZrJPy2EM2yNGALy61siYBO4")
+genai.configure(api_key="")
 
 # Create FastAPI app instance
 app = FastAPI()
